@@ -285,7 +285,7 @@
             this.btnCerrar.BackgroundImage = global::Form2.Properties.Resources.pngwing_com_png6;
             this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCerrar.Location = new System.Drawing.Point(12, 321);
+            this.btnCerrar.Location = new System.Drawing.Point(12, 398);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(39, 37);
             this.btnCerrar.TabIndex = 15;
@@ -297,7 +297,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(781, 369);
+            this.ClientSize = new System.Drawing.Size(803, 447);
             this.ControlBox = false;
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btoIngresar);

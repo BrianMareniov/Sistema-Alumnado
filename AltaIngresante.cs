@@ -23,6 +23,7 @@ namespace Form2
             string direccion = txtDireccion.Text.Trim();
             int edad = (int)nudEdad.Value;
             string cuit = mtbCuit.Text.Trim();
+
             if (Funciones.ValidarCuit(cuit))
             {
                 string genero = "";
@@ -62,7 +63,7 @@ namespace Form2
 
                 if (MessageBox.Show(ingr.ToString(), "Datos del ingresante: ", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
                 {
-                    if (MessageBox.Show(ingr.ToStringCursos(), "Cursos inscriptos: ", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
+                    if (MessageBox.Show(ingr.Mostrar(), "Cursos inscriptos: ", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
                     //ingr.Guardar();
                     this.Vaciar();
                 }

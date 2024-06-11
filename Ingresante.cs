@@ -35,13 +35,14 @@ namespace Form2
             this.Pais = pais;
         }
 
-        public string Mostrar() //ESTE MÉTODO DEBE UTILIZAR STRINGBUILDER E INTERPOLACIÓN DE STRINGS
+        // Método para mostrar información del registro del ingresante
+        public string Mostrar()
         {
             StringBuilder strBuilder = new StringBuilder();
 
             for (int i=0; i < 3; i++)
             {
-                if (curso[i] != null)
+                if ((curso[i].Contains("C#")) || (curso[i].Contains("C++")) || (curso[i].Contains("JavaScript")))
                 {
                     strBuilder.Append(curso[i] + " - ");
                 }
@@ -50,9 +51,5 @@ namespace Form2
             return ($"Nombre del alumno: {Nombre} \nEdad: {Edad} \nCuit: {Cuit} \nGénero: {Genero} \nPaís: {Pais} \nCursos seleccionados: {strBuilder}");
         }
 
-        public string ToStringCursos()
-        {
-            return ("Los cursos seleccionados son: \n" + curso[0] + "\n" + curso[1] + "\n" + curso[2]);
-        }
     }
 }

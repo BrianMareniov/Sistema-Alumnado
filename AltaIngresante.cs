@@ -62,7 +62,7 @@ namespace Form2
 
                 if (MessageBox.Show(ingr.ToString(), "Datos del ingresante: ", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
                 {
-                    if (MessageBox.Show(ingr.ToStringCursos(), "Cursos inscriptos: ", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
+                    if (MessageBox.Show(ingr.Mostrar(), "Cursos inscriptos: ", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
                     //ingr.Guardar();
                     this.Vaciar();
                 }

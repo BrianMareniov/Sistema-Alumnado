@@ -47,6 +47,18 @@ namespace Form2
                 return calculado == digito;     // Si se verifica que el código de verificación es igual al dígito del CUIT, se retorna true
             }
         }
+
+
+        public static bool ValidarIngresante(Ingresante ingr)
+        {
+                        
+            if (string.IsNullOrEmpty(ingr.Genero) || string.IsNullOrEmpty(ingr.Pais) || string.IsNullOrEmpty(ingr.Nombre) || string.IsNullOrEmpty(Convert.ToString(ingr.Edad)) || string.IsNullOrEmpty(ingr.Direccion))
+            {
+                return false;
+            }
+
+            return true;
+        }
         
         
     }

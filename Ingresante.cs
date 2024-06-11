@@ -51,5 +51,10 @@ namespace Form2
             return ($"Nombre del alumno: {Nombre} \nEdad: {Edad} \nCuit: {Cuit} \nGénero: {Genero} \nPaís: {Pais} \nCursos seleccionados: {strBuilder}");
         }
 
+        public override string ToString()
+        {
+            return ("Datos ingresados");
+        }
+
     }
 }

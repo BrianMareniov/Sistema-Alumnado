@@ -60,9 +60,9 @@ namespace Form2
 
                 Ingresante ingr = new Ingresante(nombre, direccion, edad, cuit, genero, curso, pais);
 
-                if (MessageBox.Show(ingr.ToString(), "Datos del ingresante: ", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                if (Funciones.ValidarIngresante(ingr))
                 {
-                    if (MessageBox.Show(ingr.Mostrar(), "Cursos inscriptos: ", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
+                    MessageBox.Show(ingr.Mostrar(), "Datos ingresados: ", MessageBoxButtons.OKCancel);
                     //ingr.Guardar();
                     this.Vaciar();
                 }

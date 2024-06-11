@@ -19,7 +19,7 @@ namespace Form2
 
         private void altaDeIngresantesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frm_alta_Ingresante = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "Frm_alta_Ingresante").SingleOrDefault();
+            Form frm_alta_Ingresante = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "AltaIngresante").SingleOrDefault();
 
             // Verifica si el formulario ya está abierto
             if (frm_alta_Ingresante == null)

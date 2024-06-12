@@ -86,15 +86,13 @@ namespace Form2
                 MessageBox.Show("CUIT/CUIL incorrecto. Verifique.");
             }
 
-
-
         }
 
         internal void Vaciar()
         {
             txtDireccion.Text = "";
             txtNombre.Text = "";
-            nudEdad.Value = 18;
+            nudEdad.Value = 0;
             mtbCuit.Text = "";
             rbFemenino.Checked = false;
             rbMasculino.Checked = false;

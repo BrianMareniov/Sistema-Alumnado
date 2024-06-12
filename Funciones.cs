@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,12 @@ namespace Form2
 {
     internal static class Funciones
     {
+        static Dictionary<string, List<string>> cursos = new Dictionary<string, List<string>>()
+        {
+            { "C#", new List<string>() },
+            { "C++", new List<string>() },
+            { "JavaScript", new List<string>() }
+        };
 
         public static int CalcularDigito(string cuit)
         {
@@ -62,7 +69,7 @@ namespace Form2
 
         public static bool ValidarEdad(int edad)
         {
-            if (edad > 18)
+            if (edad >= 18)
             {
                 return true;
             }
@@ -70,6 +77,12 @@ namespace Form2
             {
                 return false;
             }
+        }
+
+        static void GuardarDatos()
+        {
+
+
         }
 
     }

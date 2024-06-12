@@ -95,23 +95,13 @@
             // 
             this.nudEdad.Location = new System.Drawing.Point(79, 85);
             this.nudEdad.Maximum = new decimal(new int[] {
-            120,
-            0,
-            0,
-            0});
-            this.nudEdad.Minimum = new decimal(new int[] {
-            18,
+            80,
             0,
             0,
             0});
             this.nudEdad.Name = "nudEdad";
             this.nudEdad.Size = new System.Drawing.Size(55, 21);
             this.nudEdad.TabIndex = 3;
-            this.nudEdad.Value = new decimal(new int[] {
-            18,
-            0,
-            0,
-            0});
             // 
             // txtDireccion
             // 

@@ -59,6 +59,16 @@ namespace Form2
 
             return true;
         }
+
+        //public static string ValidarEdad(int edad)
+        //{
+        //    if(edad > 18)
+        //    {
+        //        return Convert.ToString(edad);
+        //    }
+
+        //    return "";
+        //}
         
         
     }

@@ -32,6 +32,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaDeIngresantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actualizarIngresanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarIngresanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +50,9 @@
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaDeIngresantesToolStripMenuItem});
+            this.altaDeIngresantesToolStripMenuItem,
+            this.actualizarIngresanteToolStripMenuItem,
+            this.eliminarIngresanteToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -56,9 +60,21 @@
             // altaDeIngresantesToolStripMenuItem
             // 
             this.altaDeIngresantesToolStripMenuItem.Name = "altaDeIngresantesToolStripMenuItem";
-            this.altaDeIngresantesToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.altaDeIngresantesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.altaDeIngresantesToolStripMenuItem.Text = "Alta de Ingresantes";
             this.altaDeIngresantesToolStripMenuItem.Click += new System.EventHandler(this.altaDeIngresantesToolStripMenuItem_Click);
+            // 
+            // actualizarIngresanteToolStripMenuItem
+            // 
+            this.actualizarIngresanteToolStripMenuItem.Name = "actualizarIngresanteToolStripMenuItem";
+            this.actualizarIngresanteToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.actualizarIngresanteToolStripMenuItem.Text = "Baja Ingresante";
+            // 
+            // eliminarIngresanteToolStripMenuItem
+            // 
+            this.eliminarIngresanteToolStripMenuItem.Name = "eliminarIngresanteToolStripMenuItem";
+            this.eliminarIngresanteToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.eliminarIngresanteToolStripMenuItem.Text = "Modificar Ingresante";
             // 
             // Menu
             // 
@@ -84,5 +100,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaDeIngresantesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem actualizarIngresanteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarIngresanteToolStripMenuItem;
     }
 }

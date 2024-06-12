@@ -63,9 +63,17 @@ namespace Form2
 
                 if (Funciones.ValidarIngresante(ingr))
                 {
-                    MessageBox.Show(ingr.Mostrar(), "Datos ingresados: ", MessageBoxButtons.OKCancel);
-                    //ingr.Guardar();
-                    this.Vaciar();
+                    if (Funciones.ValidarEdad(edad))
+                    {
+                        MessageBox.Show(ingr.Mostrar(), "Datos ingresados: ", MessageBoxButtons.OKCancel);
+                        //ingr.Guardar();
+                        this.Vaciar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe ser mayor de edad para ingresar al/los cursos");
+                    }
+
                 }
                 else
                 {
@@ -77,6 +85,9 @@ namespace Form2
             {
                 MessageBox.Show("CUIT/CUIL incorrecto. Verifique.");
             }
+
+
+
         }
 
         internal void Vaciar()

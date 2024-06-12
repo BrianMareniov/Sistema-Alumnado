@@ -57,6 +57,9 @@
             // 
             // gbDetalleUsuario
             // 
+            this.gbDetalleUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbDetalleUsuario.Controls.Add(this.mtbCuit);
             this.gbDetalleUsuario.Controls.Add(this.label5);
             this.gbDetalleUsuario.Controls.Add(this.nudEdad);
@@ -65,7 +68,7 @@
             this.gbDetalleUsuario.Controls.Add(this.label3);
             this.gbDetalleUsuario.Controls.Add(this.label2);
             this.gbDetalleUsuario.Controls.Add(this.label1);
-            this.gbDetalleUsuario.Location = new System.Drawing.Point(51, 46);
+            this.gbDetalleUsuario.Location = new System.Drawing.Point(81, 44);
             this.gbDetalleUsuario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbDetalleUsuario.Name = "gbDetalleUsuario";
             this.gbDetalleUsuario.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -146,14 +149,17 @@
             // 
             // gbGenero
             // 
+            this.gbGenero.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbGenero.Controls.Add(this.rbNoBinario);
             this.gbGenero.Controls.Add(this.rbFemenino);
             this.gbGenero.Controls.Add(this.rbMasculino);
-            this.gbGenero.Location = new System.Drawing.Point(445, 46);
+            this.gbGenero.Location = new System.Drawing.Point(475, 44);
             this.gbGenero.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbGenero.Name = "gbGenero";
             this.gbGenero.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gbGenero.Size = new System.Drawing.Size(233, 115);
+            this.gbGenero.Size = new System.Drawing.Size(233, 141);
             this.gbGenero.TabIndex = 5;
             this.gbGenero.TabStop = false;
             this.gbGenero.Text = "Género";
@@ -161,7 +167,7 @@
             // rbNoBinario
             // 
             this.rbNoBinario.AutoSize = true;
-            this.rbNoBinario.Location = new System.Drawing.Point(17, 80);
+            this.rbNoBinario.Location = new System.Drawing.Point(15, 91);
             this.rbNoBinario.Name = "rbNoBinario";
             this.rbNoBinario.Size = new System.Drawing.Size(83, 19);
             this.rbNoBinario.TabIndex = 8;
@@ -172,7 +178,7 @@
             // rbFemenino
             // 
             this.rbFemenino.AutoSize = true;
-            this.rbFemenino.Location = new System.Drawing.Point(17, 55);
+            this.rbFemenino.Location = new System.Drawing.Point(15, 66);
             this.rbFemenino.Name = "rbFemenino";
             this.rbFemenino.Size = new System.Drawing.Size(81, 19);
             this.rbFemenino.TabIndex = 7;
@@ -183,7 +189,7 @@
             // rbMasculino
             // 
             this.rbMasculino.AutoSize = true;
-            this.rbMasculino.Location = new System.Drawing.Point(17, 30);
+            this.rbMasculino.Location = new System.Drawing.Point(15, 41);
             this.rbMasculino.Name = "rbMasculino";
             this.rbMasculino.Size = new System.Drawing.Size(82, 19);
             this.rbMasculino.TabIndex = 6;
@@ -196,7 +202,7 @@
             this.gbCurso.Controls.Add(this.chkJavascript);
             this.gbCurso.Controls.Add(this.chkCplus);
             this.gbCurso.Controls.Add(this.chkC);
-            this.gbCurso.Location = new System.Drawing.Point(445, 199);
+            this.gbCurso.Location = new System.Drawing.Point(475, 197);
             this.gbCurso.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbCurso.Name = "gbCurso";
             this.gbCurso.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -245,7 +251,7 @@
             "Uruguay",
             "Brasil",
             "Perú"});
-            this.lbPais.Location = new System.Drawing.Point(151, 217);
+            this.lbPais.Location = new System.Drawing.Point(132, 215);
             this.lbPais.Name = "lbPais";
             this.lbPais.Size = new System.Drawing.Size(134, 79);
             this.lbPais.TabIndex = 9;
@@ -253,7 +259,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(151, 199);
+            this.label4.Location = new System.Drawing.Point(181, 197);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 15);
             this.label4.TabIndex = 3;
@@ -262,7 +268,7 @@
             // btoIngresar
             // 
             this.btoIngresar.BackColor = System.Drawing.SystemColors.Menu;
-            this.btoIngresar.Location = new System.Drawing.Point(302, 320);
+            this.btoIngresar.Location = new System.Drawing.Point(332, 318);
             this.btoIngresar.Name = "btoIngresar";
             this.btoIngresar.Size = new System.Drawing.Size(113, 38);
             this.btoIngresar.TabIndex = 14;

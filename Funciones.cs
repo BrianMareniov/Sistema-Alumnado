@@ -9,7 +9,7 @@ namespace Form2
 {
     internal static class Funciones
     {
-        
+
         public static int CalcularDigito(string cuit)
         {
             int[] mult = new[] { 5, 4, 3, 2, 7, 6, 5, 4, 3, 2 };
@@ -24,7 +24,7 @@ namespace Form2
             var resto = total % 11;
             return resto == 0 ? 0 : resto == 1 ? 9 : 11 - resto;
         }
-       
+
 
         //Método para verificar si el CUIT ingresado es correcto.
         public static bool ValidarCuit(string cuit)
@@ -51,7 +51,7 @@ namespace Form2
 
         public static bool ValidarIngresante(Ingresante ingr)
         {
-                        
+
             if (string.IsNullOrEmpty(ingr.Genero) || string.IsNullOrEmpty(ingr.Pais) || string.IsNullOrEmpty(ingr.Nombre) || string.IsNullOrEmpty(Convert.ToString(ingr.Edad)) || string.IsNullOrEmpty(ingr.Direccion))
             {
                 return false;
@@ -60,16 +60,17 @@ namespace Form2
             return true;
         }
 
-        //public static string ValidarEdad(int edad)
-        //{
-        //    if(edad > 18)
-        //    {
-        //        return Convert.ToString(edad);
-        //    }
+        public static bool ValidarEdad(int edad)
+        {
+            if (edad > 18)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
-        //    return "";
-        //}
-        
-        
     }
 }

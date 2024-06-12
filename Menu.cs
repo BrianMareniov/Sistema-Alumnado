@@ -38,7 +38,7 @@ namespace Form2
             {
                 // El formulario ya está abierto, puedes traerlo al frente si lo deseas
                 frm_alta_Ingresante.Select();
-                frm_alta_Ingresante.WindowState = FormWindowState.Normal;
+                frm_alta_Ingresante.WindowState = FormWindowState.Maximized;
                 frm_alta_Ingresante.Show();
             }
 

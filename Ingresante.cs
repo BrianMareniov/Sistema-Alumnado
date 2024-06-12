@@ -13,7 +13,7 @@ namespace Form2
         int edad;
         string cuit;
         string genero;
-        string pais;            
+        string pais;
         string[] curso;
 
         public string Nombre { get => nombre; set => nombre = value; }
@@ -40,7 +40,7 @@ namespace Form2
         {
             StringBuilder strBuilder = new StringBuilder();
 
-            for (int i=0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 if ((curso[i].Contains("C#")) || (curso[i].Contains("C++")) || (curso[i].Contains("JavaScript")))
                 {
@@ -50,8 +50,6 @@ namespace Form2
 
             return ($"Nombre del alumno: {Nombre} \nEdad: {Edad} \nCuit: {Cuit} \nGénero: {Genero} \nPaís: {Pais} \nCursos seleccionados: {strBuilder}");
         }
-
-        
 
     }
 }

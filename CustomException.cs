@@ -10,7 +10,7 @@ namespace Form2
     {
         public CustomException(string Message)
         {
-        
+            
         }
     }
 }

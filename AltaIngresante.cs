@@ -44,27 +44,29 @@ namespace Form2
                 string check2 = chkCplus.Checked ? chkCplus.Text.Trim() : "";
                 string check3 = chkJavascript.Checked ? chkJavascript.Text.Trim() : "";
 
-                string[] curso = new string[3];
+                string[] cursos = new string[3];
                 if (check1 == "" && check2 == "" && check3 == "")
                 {
                     MessageBox.Show("Selecciona una opción para 'Curso'");
                 }
                 else
                 {
-                    curso[0] = check1;
-                    curso[1] = check2;
-                    curso[2] = check3;
+                    cursos[0] = check1;
+                    cursos[1] = check2;
+                    cursos[2] = check3;
                 }
 
                 string pais = lbPais.Text.Trim();
 
 
-                Ingresante ingr = new Ingresante(nombre, direccion, edad, cuit, genero, curso, pais);
+                Ingresante ingr = new Ingresante(nombre, direccion, edad, cuit, genero, cursos, pais);
 
                 if (Funciones.ValidarIngresante(ingr))
                 {
                     MessageBox.Show(ingr.Mostrar(), "Datos ingresados: ", MessageBoxButtons.OKCancel);
-                    //ingr.Guardar();
+
+                    Funciones.CargarIngresante(ingr);
+                    //Cursos.ImprimirLista();
                     this.Vaciar();
 
                 }
@@ -99,6 +101,15 @@ namespace Form2
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite solo letras y controla las teclas de retroceso y espacio
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true; // Cancela el evento si no es una letra
+            }
         }
     }
 }

@@ -10,14 +10,9 @@ using System.Windows.Forms;
 namespace Form2
 {
     internal static class Funciones
-    {
-        static Dictionary<string, List<string>> cursos = new Dictionary<string, List<string>>()
-        {
-            { "C#", new List<string>() },
-            { "C++", new List<string>() },
-            { "JavaScript", new List<string>() }
-        };
+    {   
 
+        
         public static int CalcularDigito(string cuit)
         {
             int[] mult = new[] { 5, 4, 3, 2, 7, 6, 5, 4, 3, 2 };
@@ -64,11 +59,12 @@ namespace Form2
 
             if (string.IsNullOrEmpty(ingr.Genero) || string.IsNullOrEmpty(ingr.Pais) || string.IsNullOrEmpty(ingr.Nombre) || string.IsNullOrEmpty(Convert.ToString(ingr.Edad)) || string.IsNullOrEmpty(ingr.Direccion))
             {
-                if (!(Funciones.ValidarEdad(ingr.Edad)))
-                {
-                    return false;
-                }
+               return false;
                 
+            }
+            if (!(Funciones.ValidarEdad(ingr.Edad)))
+            {
+                return false;
             }
 
             return true;
@@ -88,9 +84,24 @@ namespace Form2
         }
 
         // Método para guardar datos del ingresante.
-        static void GuardarDatos()
+        public static void CargarIngresante(Ingresante persona)
         {
-
+            for (int i = 0; i < persona.Curso.Length ; i++)
+            {
+                if (persona.Curso[i].Contains("C#"))
+                {
+                    Cursos.AgregarCSharp(persona);
+                }
+                if (persona.Curso[i].Contains("C++"))
+                {
+                    Cursos.AgregarCPlusPlus(persona);
+                }
+                if (persona.Curso[i].Contains("JavaScript"))
+                {
+                    Cursos.AgregarJavaScript(persona);
+                }
+                
+            }
 
         }
 

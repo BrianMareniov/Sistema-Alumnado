@@ -61,7 +61,11 @@ namespace Form2
 
             if (string.IsNullOrEmpty(ingr.Genero) || string.IsNullOrEmpty(ingr.Pais) || string.IsNullOrEmpty(ingr.Nombre) || string.IsNullOrEmpty(Convert.ToString(ingr.Edad)) || string.IsNullOrEmpty(ingr.Direccion))
             {
-                return false;
+                if (!(Funciones.ValidarEdad(ingr.Edad)))
+                {
+                    return false;
+                }
+                
             }
 
             return true;

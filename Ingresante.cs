@@ -8,13 +8,13 @@ namespace Form2
 {
     internal class Ingresante
     {
-        string nombre;
-        string direccion;
-        int edad;
-        string cuit;
-        string genero;
-        string pais;
-        string[] curso;
+        private string nombre;
+        private string direccion;
+        private int edad;
+        private string cuit;
+        private string genero;
+        private string pais;
+        private string[] curso;
 
         public string Nombre { get => nombre; set => nombre = value; }
         public string Direccion { get => direccion; set => direccion = value; }

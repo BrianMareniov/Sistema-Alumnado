@@ -63,16 +63,9 @@ namespace Form2
 
                 if (Funciones.ValidarIngresante(ingr))
                 {
-                    if (Funciones.ValidarEdad(edad))
-                    {
-                        MessageBox.Show(ingr.Mostrar(), "Datos ingresados: ", MessageBoxButtons.OKCancel);
-                        //ingr.Guardar();
-                        this.Vaciar();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Debe ser mayor de edad para ingresar al/los cursos");
-                    }
+                    MessageBox.Show(ingr.Mostrar(), "Datos ingresados: ", MessageBoxButtons.OKCancel);
+                    //ingr.Guardar();
+                    this.Vaciar();
 
                 }
                 else

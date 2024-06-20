@@ -52,6 +52,7 @@
     <Compile Include="AltaIngresante.Designer.cs">
       <DependentUpon>AltaIngresante.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomException.cs" />
     <Compile Include="Funciones.cs" />
     <Compile Include="Ingresante.cs" />
     <Compile Include="Menu.cs">

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -34,26 +35,28 @@ namespace Form2
 
 
         //Método para verificar si el CUIT ingresado es correcto.
-        public static bool ValidarCuit(string cuit)
-        {
-            if (cuit == null)  // Verifica si no se ingresa nada.
-            {
-                return false;
-            }
+        //public static bool ValidarCuit(string cuit)
+        //{
+            
 
-            cuit = cuit.Replace("-", string.Empty); // Los espacios vacíos son reemplazados por guiones.
+        //    if (cuit == null)  // Verifica si no se ingresa nada.
+        //    {
+        //        return false;
+        //    }
 
-            if (cuit.Length != 11)  // Verifica que la cantidad de dígitos sea igual a 11
-            {
-                return false;
-            }
-            else
-            {
-                int calculado = CalcularDigito(cuit);  // Se almacena el código de verificación
-                int digito = int.Parse(cuit.Substring(10)); // Se almacena la subcadena que comienza en la posición 10
-                return calculado == digito;     // Si se verifica que el código de verificación es igual al dígito del CUIT, se retorna true
-            }
-        }
+        //    cuit = cuit.Replace("-", string.Empty); // Los guiones son reemplazados por espacios vacíos.
+
+        //    if (cuit.Length != 11)  // Verifica que la cantidad de dígitos sea igual a 11
+        //    {
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        int calculado = CalcularDigito(cuit);  // Se almacena el código de verificación
+        //        int digito = int.Parse(cuit.Substring(10)); // Se almacena la subcadena que comienza en la posición 10
+        //        return calculado == digito;     // Si se verifica que el código de verificación es igual al dígito del CUIT, se retorna true
+        //    }
+        //}
 
 
         public static bool ValidarIngresante(Ingresante ingr)
@@ -71,6 +74,7 @@ namespace Form2
             return true;
         }
 
+        // Validación de la edad del ingresante: Debe ser mayor a 18 años.
         public static bool ValidarEdad(int edad)
         {
             if (edad >= 18)
@@ -83,10 +87,32 @@ namespace Form2
             }
         }
 
+        // Método para guardar datos del ingresante.
         static void GuardarDatos()
         {
 
 
+        }
+
+
+        public static bool ValidarCuit(string cuit)
+        {
+            try
+            {
+                cuit = cuit.Replace("-", string.Empty); // Los guiones son reemplazados por espacios vacíos.
+                if (string.IsNullOrEmpty(cuit.Trim()))  // Verifica si no se ingresa nada. De ser así, lanza una excepción
+                {
+                    CustomException ex = new CustomException("El CUIT no puede estar vacío.");
+                    throw ex;
+                }
+
+                return true;
+            }
+            catch (CustomException ex)
+            {
+                MessageBox.Show("Aviso: " + ex.Message);
+                return false;
+            }
         }
 
     }

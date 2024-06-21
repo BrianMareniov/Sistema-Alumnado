@@ -34,6 +34,7 @@ namespace Form2
             this.Curso = curso;
             this.Pais = pais;
         }
+        public Ingresante() { }
 
         // Método para mostrar información del registro del ingresante
         public string Mostrar()

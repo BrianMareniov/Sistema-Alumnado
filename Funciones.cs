@@ -54,6 +54,7 @@ namespace Form2
         //}
 
 
+        // Valida mayoria de Edad, y que no haya ningun dato vacio
         public static bool ValidarIngresante(Ingresante ingr)
         {
 
@@ -115,7 +116,7 @@ namespace Form2
 
         }
 
-
+        //Verifica que el CUIL ingresado sea valido en cuanto al estandar
         public static bool ValidarCuit(string cuit)
         {
             try
@@ -136,6 +137,7 @@ namespace Form2
             }
         }
 
+        //Verifica si ya esta el cuil se encuentra el la lista
         public static bool VerificarIngreso(Ingresante persona)
         {
 
@@ -176,7 +178,7 @@ namespace Form2
         }
 
 
-
+        //Los carga en cada archivo de cada curso con la "|" separadora
         public static void ArchivarEstudiante(Ingresante persona)
         {
             StreamWriter sw = null;
@@ -298,6 +300,107 @@ namespace Form2
 
         }
 
+
+        //Lee el archivo y lo carga en las listas estaticas. Lo llamamos en el evento LOAD (AltaIngresante.cs)
+        public static void LeerArchivos()
+        {
+          
+            try
+            {
+                string[] lineas = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\CursoCSharp.txt");
+
+                foreach (var linea in lineas)
+                {
+                    if (!string.IsNullOrWhiteSpace(linea))
+                    {
+                        // Eliminar los caracteres de borde y dividir por '|'
+                        var atributos = linea.Trim('|').Split('|');
+                        if (atributos.Length == 6)  // Verificar si hay 6 atributos
+                        {
+                            var persona = new Ingresante
+                            {
+                                Cuit = atributos[0].Trim(),
+                                Nombre = atributos[1].Trim(),
+                                Direccion = atributos[2].Trim(),
+                                Edad = int.Parse(atributos[3].Trim()),
+                                Pais = atributos[4].Trim(),
+                                Genero = atributos[5].Trim(),
+
+                            };
+                            Cursos.AgregarCSharp(persona);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al leer el archivo: {ex.Message}");
+            }
+
+            try
+            {
+                string[] lineas = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\CursoCplusplus.txt");
+
+                foreach (var linea in lineas)
+                {
+                    if (!string.IsNullOrWhiteSpace(linea))
+                    {
+                        // Eliminar los caracteres de borde y dividir por '|'
+                        var atributos = linea.Trim('|').Split('|');
+                        if (atributos.Length == 6)  // Verificar si hay 6 atributos
+                        {
+                            var persona = new Ingresante
+                            {
+                                Cuit = atributos[0].Trim(),
+                                Nombre = atributos[1].Trim(),
+                                Direccion = atributos[2].Trim(),
+                                Edad = int.Parse(atributos[3].Trim()),
+                                Pais = atributos[4].Trim(),
+                                Genero = atributos[5].Trim(),
+
+                            };
+                            Cursos.AgregarCPlusPlus(persona);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al leer el archivo: {ex.Message}");
+            }
+
+            try
+            {
+                string[] lineas = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\CursoJavaScript.txt");
+
+                foreach (var linea in lineas)
+                {
+                    if (!string.IsNullOrWhiteSpace(linea))
+                    {
+                        // Eliminar los caracteres de borde y dividir por '|'
+                        var atributos = linea.Trim('|').Split('|');
+                        if (atributos.Length == 6)  // Verificar si hay 6 atributos
+                        {
+                            var persona = new Ingresante
+                            {
+                                Cuit = atributos[0].Trim(),
+                                Nombre = atributos[1].Trim(),
+                                Direccion = atributos[2].Trim(),
+                                Edad = int.Parse(atributos[3].Trim()),
+                                Pais = atributos[4].Trim(),
+                                Genero = atributos[5].Trim(),
+
+                            };
+                            Cursos.AgregarJavaScript(persona);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al leer el archivo: {ex.Message}");
+            }
+        }     
 
 
     }

@@ -111,5 +111,10 @@ namespace Form2
                 e.Handled = true; // Cancela el evento si no es una letra
             }
         }
+
+        private void AltaIngresante_Load(object sender, EventArgs e)
+        {
+            Funciones.LeerArchivos();
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace Form2
         internal static List<Ingresante> CursoCplusplus1 { get => CursoCplusplus; set => CursoCplusplus = value; }
         internal static List<Ingresante> CursoJavaScript1 { get => CursoJavaScript; set => CursoJavaScript = value; }
 
-        public static void AgregarCSharp(Ingresante persona)
+        public static void AgregarCSharp(Ingresante persona)                    //Asignamos un limite de participantes por cada curso
         {
             if(CursoCSharp1.Count < 40 )
             {

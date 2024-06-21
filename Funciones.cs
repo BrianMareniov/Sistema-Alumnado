@@ -97,6 +97,7 @@ namespace Form2
                     if (persona.Curso[i].Contains("C++"))
                     {
                         Cursos.AgregarCPlusPlus(persona);
+
                     }
                     if (persona.Curso[i].Contains("JavaScript"))
                     {
@@ -181,38 +182,119 @@ namespace Form2
             StreamWriter sw = null;
 
             // Obtener el directorio actual del proyecto
-            string currentDirectory = Directory.GetCurrentDirectory() + "\\CursoCplusplus.txt";
+            string path_CursoCSharp = Directory.GetCurrentDirectory() + "\\CursoCSharp.txt";
+            string path_CursoCplusplus = Directory.GetCurrentDirectory() + "\\CursoCplusplus.txt";
+            string path_CursoJavaScript = Directory.GetCurrentDirectory() + "\\CursoJavaScript.txt";
 
-            try
+
+
+            if (persona.Curso.Contains("C#"))
             {
-                sw = new StreamWriter(currentDirectory, true);
-                StringBuilder sb = new StringBuilder();
-                sb.Append(persona.Cuit);
-                sb.Append("|");
-                sb.Append(persona.Nombre);
-                sb.Append("|");
-                sb.Append(persona.Direccion);
-                sb.Append("|");
-                sb.Append(Convert.ToString(persona.Edad));
-                sb.Append("|");
-                sb.Append(persona.Pais);
-                sb.Append("|");
-                sb.Append(persona.Genero);
-                sb.Append("|");
-                sw.WriteLine(sb);
-                sw.Close();
-                sw.Dispose();
-
-            }
-            finally
-            {
-
-                if (sw != null)
+                try
                 {
+                    sw = new StreamWriter(path_CursoCSharp, true);
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("|");
+                    sb.Append(persona.Cuit);
+                    sb.Append("|");
+                    sb.Append(persona.Nombre);
+                    sb.Append("|");
+                    sb.Append(persona.Direccion);
+                    sb.Append("|");
+                    sb.Append(Convert.ToString(persona.Edad));
+                    sb.Append("|");
+                    sb.Append(persona.Pais);
+                    sb.Append("|");
+                    sb.Append(persona.Genero);
+                    sb.Append("|");
+                    sw.WriteLine(sb);
                     sw.Close();
                     sw.Dispose();
+
                 }
+                finally
+                {
+
+                    if (sw != null)
+                    {
+                        sw.Close();
+                        sw.Dispose();
+                    }
+                }
+
             }
+            if (persona.Curso.Contains("C++"))
+            {
+                try
+                {
+                    sw = new StreamWriter(path_CursoCplusplus, true);
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("|");
+                    sb.Append(persona.Cuit);
+                    sb.Append("|");
+                    sb.Append(persona.Nombre);
+                    sb.Append("|");
+                    sb.Append(persona.Direccion);
+                    sb.Append("|");
+                    sb.Append(Convert.ToString(persona.Edad));
+                    sb.Append("|");
+                    sb.Append(persona.Pais);
+                    sb.Append("|");
+                    sb.Append(persona.Genero);
+                    sb.Append("|");
+                    sw.WriteLine(sb);
+                    sw.Close();
+                    sw.Dispose();
+
+                }
+                finally
+                {
+
+                    if (sw != null)
+                    {
+                        sw.Close();
+                        sw.Dispose();
+                    }
+                }
+
+            }
+            if (persona.Curso.Contains("JavaScript"))
+            {
+                try
+                {
+                    sw = new StreamWriter(path_CursoJavaScript, true);
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("|");
+                    sb.Append(persona.Cuit);
+                    sb.Append("|");
+                    sb.Append(persona.Nombre);
+                    sb.Append("|");
+                    sb.Append(persona.Direccion);
+                    sb.Append("|");
+                    sb.Append(Convert.ToString(persona.Edad));
+                    sb.Append("|");
+                    sb.Append(persona.Pais);
+                    sb.Append("|");
+                    sb.Append(persona.Genero);
+                    sb.Append("|");
+                    sw.WriteLine(sb);
+                    sw.Close();
+                    sw.Dispose();
+
+                }
+                finally
+                {
+
+                    if (sw != null)
+                    {
+                        sw.Close();
+                        sw.Dispose();
+                    }
+                }
+
+            }
+
+
 
         }
 

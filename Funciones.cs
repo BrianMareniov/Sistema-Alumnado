@@ -10,9 +10,9 @@ using System.Windows.Forms;
 namespace Form2
 {
     internal static class Funciones
-    {   
+    {
 
-        
+
         public static int CalcularDigito(string cuit)
         {
             int[] mult = new[] { 5, 4, 3, 2, 7, 6, 5, 4, 3, 2 };
@@ -32,7 +32,7 @@ namespace Form2
         //Método para verificar si el CUIT ingresado es correcto.
         //public static bool ValidarCuit(string cuit)
         //{
-            
+
 
         //    if (cuit == null)  // Verifica si no se ingresa nada.
         //    {
@@ -59,8 +59,8 @@ namespace Form2
 
             if (string.IsNullOrEmpty(ingr.Genero) || string.IsNullOrEmpty(ingr.Pais) || string.IsNullOrEmpty(ingr.Nombre) || string.IsNullOrEmpty(Convert.ToString(ingr.Edad)) || string.IsNullOrEmpty(ingr.Direccion))
             {
-               return false;
-                
+                return false;
+
             }
             if (!(Funciones.ValidarEdad(ingr.Edad)))
             {
@@ -104,12 +104,13 @@ namespace Form2
                     }
 
                 }
+                ArchivarEstudiante(persona);
             }
             else
             {
                 MessageBox.Show("Ya estas inscripto en uno o mas cursos de los que elegiste.");
             }
-            
+
 
         }
 
@@ -133,7 +134,7 @@ namespace Form2
                 return false;
             }
         }
-        
+
         public static bool VerificarIngreso(Ingresante persona)
         {
 
@@ -146,7 +147,7 @@ namespace Form2
                         return true;
                     }
                 }
-            }  
+            }
             if (persona.Curso.Contains("C++"))
             {
                 for (int i = 0; i < Cursos.CursoCplusplus1.Count; i++)
@@ -157,7 +158,7 @@ namespace Form2
                     }
                 }
 
-            }  
+            }
             if (persona.Curso.Contains("JavaScript"))
             {
                 for (int i = 0; i < Cursos.CursoJavaScript1.Count; i++)
@@ -170,20 +171,52 @@ namespace Form2
 
             }
             return false;
-                     
+
         }
 
 
-        //public static void ArchivarEstudiante(Ingresante persona)
-        //{
-        //    StringBuilder sb = new StringBuilder();
-            
 
-        //    File.WriteAllText("")
+        public static void ArchivarEstudiante(Ingresante persona)
+        {
+            StreamWriter sw = null;
 
-        //}
+            // Obtener el directorio actual del proyecto
+            string currentDirectory = Directory.GetCurrentDirectory() + "\\CursoCplusplus.txt";
 
-        
+            try
+            {
+                sw = new StreamWriter(currentDirectory, true);
+                StringBuilder sb = new StringBuilder();
+                sb.Append(persona.Cuit);
+                sb.Append("|");
+                sb.Append(persona.Nombre);
+                sb.Append("|");
+                sb.Append(persona.Direccion);
+                sb.Append("|");
+                sb.Append(Convert.ToString(persona.Edad));
+                sb.Append("|");
+                sb.Append(persona.Pais);
+                sb.Append("|");
+                sb.Append(persona.Genero);
+                sb.Append("|");
+                sw.WriteLine(sb);
+                sw.Close();
+                sw.Dispose();
+
+            }
+            finally
+            {
+
+                if (sw != null)
+                {
+                    sw.Close();
+                    sw.Dispose();
+                }
+            }
+
+        }
+
+
 
     }
 }

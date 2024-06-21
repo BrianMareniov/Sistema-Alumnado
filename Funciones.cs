@@ -86,22 +86,30 @@ namespace Form2
         // Método para guardar datos del ingresante.
         public static void CargarIngresante(Ingresante persona)
         {
-            for (int i = 0; i < persona.Curso.Length ; i++)
+            if (VerificarIngreso(persona) == false)
             {
-                if (persona.Curso[i].Contains("C#"))
+                for (int i = 0; i < persona.Curso.Length; i++)
                 {
-                    Cursos.AgregarCSharp(persona);
+                    if (persona.Curso[i].Contains("C#"))
+                    {
+                        Cursos.AgregarCSharp(persona);
+                    }
+                    if (persona.Curso[i].Contains("C++"))
+                    {
+                        Cursos.AgregarCPlusPlus(persona);
+                    }
+                    if (persona.Curso[i].Contains("JavaScript"))
+                    {
+                        Cursos.AgregarJavaScript(persona);
+                    }
+
                 }
-                if (persona.Curso[i].Contains("C++"))
-                {
-                    Cursos.AgregarCPlusPlus(persona);
-                }
-                if (persona.Curso[i].Contains("JavaScript"))
-                {
-                    Cursos.AgregarJavaScript(persona);
-                }
-                
             }
+            else
+            {
+                MessageBox.Show("Ya estas inscripto en uno o mas cursos de los que elegiste.");
+            }
+            
 
         }
 
@@ -125,6 +133,57 @@ namespace Form2
                 return false;
             }
         }
+        
+        public static bool VerificarIngreso(Ingresante persona)
+        {
+
+            if (persona.Curso.Contains("C#"))
+            {
+                for (int i = 0; i < Cursos.CursoCSharp1.Count; i++)
+                {
+                    if (persona.Cuit == Cursos.CursoCSharp1[i].Cuit)
+                    {
+                        return true;
+                    }
+                }
+            }  
+            if (persona.Curso.Contains("C++"))
+            {
+                for (int i = 0; i < Cursos.CursoCplusplus1.Count; i++)
+                {
+                    if (persona.Cuit == Cursos.CursoCplusplus1[i].Cuit)
+                    {
+                        return true;
+                    }
+                }
+
+            }  
+            if (persona.Curso.Contains("JavaScript"))
+            {
+                for (int i = 0; i < Cursos.CursoJavaScript1.Count; i++)
+                {
+                    if (persona.Cuit == Cursos.CursoJavaScript1[i].Cuit)
+                    {
+                        return true;
+                    }
+                }
+
+            }
+            return false;
+                     
+        }
+
+
+        //public static void ArchivarEstudiante(Ingresante persona)
+        //{
+        //    StringBuilder sb = new StringBuilder();
+            
+
+        //    File.WriteAllText("")
+
+        //}
+
+        
 
     }
 }

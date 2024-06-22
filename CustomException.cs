@@ -8,7 +8,7 @@ namespace Form2
 {
     internal class CustomException : Exception
     {
-        public CustomException(string Message)
+        public CustomException(string Message) : base (Message)
         {
             
         }

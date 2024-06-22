@@ -114,7 +114,7 @@ namespace Form2
 
         private void AltaIngresante_Load(object sender, EventArgs e)
         {
-            Funciones.LeerArchivos();
+            
         }
     }
 }

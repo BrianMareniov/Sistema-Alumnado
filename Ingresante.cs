@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Form2
 {
-    internal class Ingresante
+    public class Ingresante
     {
         private string nombre;
         private string direccion;

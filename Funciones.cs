@@ -304,7 +304,7 @@ namespace Form2
         //Lee el archivo y lo carga en las listas estaticas. Lo llamamos en el evento LOAD (AltaIngresante.cs)
         public static void LeerArchivos()
         {
-          
+
             try
             {
                 string[] lineas = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\CursoCSharp.txt");
@@ -400,8 +400,9 @@ namespace Form2
             {
                 Console.WriteLine($"Error al leer el archivo: {ex.Message}");
             }
-        }     
+        }
 
-
+        //Serializacion XML
+        
     }
 }

@@ -34,13 +34,17 @@
             this.altaDeIngresantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarIngresanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarIngresanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expoprtacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.serializaciónXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.serializaciónJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem});
+            this.menuToolStripMenuItem,
+            this.expoprtacionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -76,6 +80,29 @@
             this.eliminarIngresanteToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.eliminarIngresanteToolStripMenuItem.Text = "Modificar Ingresante";
             // 
+            // expoprtacionesToolStripMenuItem
+            // 
+            this.expoprtacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.serializaciónXMLToolStripMenuItem,
+            this.serializaciónJSONToolStripMenuItem});
+            this.expoprtacionesToolStripMenuItem.Name = "expoprtacionesToolStripMenuItem";
+            this.expoprtacionesToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.expoprtacionesToolStripMenuItem.Text = "Exportaciones";
+            // 
+            // serializaciónXMLToolStripMenuItem
+            // 
+            this.serializaciónXMLToolStripMenuItem.Name = "serializaciónXMLToolStripMenuItem";
+            this.serializaciónXMLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.serializaciónXMLToolStripMenuItem.Text = "Serialización XML";
+            this.serializaciónXMLToolStripMenuItem.Click += new System.EventHandler(this.serializaciónXMLToolStripMenuItem_Click);
+            // 
+            // serializaciónJSONToolStripMenuItem
+            // 
+            this.serializaciónJSONToolStripMenuItem.Name = "serializaciónJSONToolStripMenuItem";
+            this.serializaciónJSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.serializaciónJSONToolStripMenuItem.Text = "Serialización JSON";
+            this.serializaciónJSONToolStripMenuItem.Click += new System.EventHandler(this.serializaciónJSONToolStripMenuItem_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -88,6 +115,7 @@
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema Alumnado";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -102,5 +130,8 @@
         private System.Windows.Forms.ToolStripMenuItem altaDeIngresantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizarIngresanteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarIngresanteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem expoprtacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem serializaciónXMLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem serializaciónJSONToolStripMenuItem;
     }
 }

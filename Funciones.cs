@@ -91,7 +91,12 @@ namespace Form2
                 cuit = cuit.Replace("-", string.Empty); // Los guiones son reemplazados por espacios vacíos.
                 if (string.IsNullOrEmpty(cuit.Trim()))  // Verifica si no se ingresa nada. De ser así, lanza una excepción
                 {
-                    CustomException ex = new CustomException("El CUIT no puede estar vacío.");
+                    CustomException ex = new CustomException("Debe indicar CUIT/CUIL.");
+                    throw ex;
+                }
+                else if (cuit.Length != 11)  // Verifica que la cantidad de dígitos sea igual a 11
+                {
+                    CustomException ex = new CustomException("El CUIT/CUIL está incompleto.");
                     throw ex;
                 }
 

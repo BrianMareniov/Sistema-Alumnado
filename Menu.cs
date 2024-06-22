@@ -49,41 +49,29 @@ namespace Form2
         private void serializaciónXMLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string path_CursoCSharp = Directory.GetCurrentDirectory() + "\\CursoCSharp.xml";
-            using (StreamWriter sw = new StreamWriter(path_CursoCSharp))
-            {
-                XmlSerializer xmlCursoCSharp = new XmlSerializer(typeof(Ingresante));
-                foreach(Ingresante ingresante in Cursos.CursoCSharp1)
-                {
-                    xmlCursoCSharp.Serialize(sw, ingresante);
-                }
-                
-                
-            }
+            SerializaciónCurso(Cursos.CursoCSharp1, path_CursoCSharp, "CursoCSharp");
 
             string path_CursoCplusplus = Directory.GetCurrentDirectory() + "\\CursoCplusplus.xml";
-            using (StreamWriter sw = new StreamWriter(path_CursoCplusplus))
-            {
-                XmlSerializer xmlCursoCplusplus = new XmlSerializer(typeof(Ingresante));
-                foreach (Ingresante ingresante in Cursos.CursoCplusplus1)
-                {
-                    xmlCursoCplusplus.Serialize(sw, ingresante);
-                }
+            SerializaciónCurso(Cursos.CursoCplusplus1, path_CursoCplusplus, "CursoCplusplus");
 
-            }
-            
             string path_CursoJavaScript = Directory.GetCurrentDirectory() + "\\CursoJavaScript.xml";
-            using (StreamWriter sw = new StreamWriter(path_CursoJavaScript))
+            SerializaciónCurso(Cursos.CursoJavaScript1, path_CursoJavaScript, "CursoJavaScript");
+
+        }
+
+        private void SerializaciónCurso(List<Ingresante> curso, string filePath, string rootElementName)
+        {
+            XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
+            namespaces.Add("", ""); // Eliminar cualquier espacio de nombres
+
+            // Crear un XmlSerializer para la lista de ingresantes con el nombre del elemento raíz especificado
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Ingresante>), new XmlRootAttribute(rootElementName));
+
+            // Usa StreamWriter para escribir el archivo XML
+            using (StreamWriter sw = new StreamWriter(filePath))
             {
-                XmlSerializer xmlJavaScript = new XmlSerializer(typeof(Ingresante));
-
-                foreach (Ingresante ingresante in Cursos.CursoJavaScript1)
-                {
-                    xmlJavaScript.Serialize(sw, ingresante);
-                }
-                
-
+                xmlSerializer.Serialize(sw, curso, namespaces);
             }
-
         }
 
         private void serializaciónJSONToolStripMenuItem_Click(object sender, EventArgs e)

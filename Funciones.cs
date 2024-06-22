@@ -12,7 +12,6 @@ namespace Form2
     internal static class Funciones
     {
 
-
         public static int CalcularDigito(string cuit)
         {
             int[] mult = new[] { 5, 4, 3, 2, 7, 6, 5, 4, 3, 2 };
@@ -54,7 +53,7 @@ namespace Form2
         //}
 
 
-        // Valida mayoria de Edad, y que no haya ningun dato vacio
+        // Validación que no haya ningun dato vacio
         public static bool ValidarIngresante(Ingresante ingr)
         {
 
@@ -82,38 +81,6 @@ namespace Form2
             {
                 return false;
             }
-        }
-
-        // Método para guardar datos del ingresante.
-        public static void CargarIngresante(Ingresante persona)
-        {
-            if (VerificarIngreso(persona) == false)
-            {
-                for (int i = 0; i < persona.Curso.Length; i++)
-                {
-                    if (persona.Curso[i].Contains("C#"))
-                    {
-                        Cursos.AgregarCSharp(persona);
-                    }
-                    if (persona.Curso[i].Contains("C++"))
-                    {
-                        Cursos.AgregarCPlusPlus(persona);
-
-                    }
-                    if (persona.Curso[i].Contains("JavaScript"))
-                    {
-                        Cursos.AgregarJavaScript(persona);
-                    }
-
-                }
-                ArchivarEstudiante(persona);
-            }
-            else
-            {
-                MessageBox.Show("Ya estas inscripto en uno o mas cursos de los que elegiste.");
-            }
-
-
         }
 
         //Verifica que el CUIL ingresado sea valido en cuanto al estandar
@@ -177,6 +144,36 @@ namespace Form2
 
         }
 
+        // Método para guardar los datos de un ingresante.
+        public static void CargarIngresante(Ingresante persona)
+        {
+            if (VerificarIngreso(persona) == false)
+            {
+                for (int i = 0; i < persona.Curso.Length; i++)
+                {
+                    if (persona.Curso[i].Contains("C#"))
+                    {
+                        Cursos.AgregarCSharp(persona);
+                    }
+                    if (persona.Curso[i].Contains("C++"))
+                    {
+                        Cursos.AgregarCPlusPlus(persona);
+
+                    }
+                    if (persona.Curso[i].Contains("JavaScript"))
+                    {
+                        Cursos.AgregarJavaScript(persona);
+                    }
+
+                }
+                ArchivarEstudiante(persona);
+            }
+            else
+            {
+                MessageBox.Show("Ya estas inscripto en uno o mas cursos de los que elegiste.");
+            }
+
+        }
 
         //Los carga en cada archivo de cada curso con la "|" separadora
         public static void ArchivarEstudiante(Ingresante persona)
@@ -300,8 +297,7 @@ namespace Form2
 
         }
 
-
-        //Lee el archivo y lo carga en las listas estaticas. Lo llamamos en el evento LOAD (AltaIngresante.cs)
+        //Lee el archivo y lo carga en las listas estaticas. Lo utilizamos en el evento LOAD de Menu.cs (principal)
         public static void LeerArchivos()
         {
 
@@ -401,8 +397,5 @@ namespace Form2
                 Console.WriteLine($"Error al leer el archivo: {ex.Message}");
             }
         }
-
-        //Serializacion XML
-        
     }
 }

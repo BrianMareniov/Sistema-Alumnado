@@ -66,7 +66,7 @@ namespace Form2
                     MessageBox.Show(ingr.Mostrar(), "Datos ingresados: ", MessageBoxButtons.OKCancel);
 
                     Funciones.CargarIngresante(ingr);
-                    //Cursos.ImprimirLista();
+                    
                     this.Vaciar();
 
                 }

@@ -61,15 +61,6 @@ namespace Form2
             }
         }
 
-        //Función para imprimir lista de curso CSharp (test)
-        public static void ImprimirLista()
-        {
-            for (int i = 0; i < CursoCSharp1.Count; i++)
-            {
-                MessageBox.Show(CursoCSharp1[i].ToString());
-            }
-
-        }
-
+     
     }
 }

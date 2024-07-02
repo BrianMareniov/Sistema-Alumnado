@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,6 +40,7 @@ namespace Form2
         // Método para mostrar información del registro del ingresante
         public string Mostrar()
         {
+
             StringBuilder strBuilder = new StringBuilder();
 
             for (int i = 0; i < 3; i++)

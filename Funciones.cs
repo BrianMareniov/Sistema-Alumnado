@@ -1,17 +1,20 @@
 ﻿using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Form2
 {
     internal static class Funciones
     {
-           
+
 
         // Validación que no haya ningun dato vacio
         public static bool ValidarIngresante(Ingresante ingr)
@@ -22,10 +25,28 @@ namespace Form2
                 return false;
 
             }
+
+            for (int i = 0; i < ingr.Curso.Length; i++)
+            {
+                int contVacio = 0;
+                
+                if (ingr.Curso[i].IsNullOrEmpty())
+                {
+                    contVacio++;
+                }
+                
+                if(contVacio == ingr.Curso.Length)
+                {
+                    return false;
+                }
+            }
+
             if (!(Funciones.ValidarEdad(ingr.Edad)))
             {
                 return false;
             }
+
+            
 
             return true;
         }
@@ -41,6 +62,22 @@ namespace Form2
             {
                 return false;
             }
+        }
+
+        //Validar dígito verificador
+        public static int CalcularDigito(string cuit)
+        {
+            int[] mult = new[] { 5, 4, 3, 2, 7, 6, 5, 4, 3, 2 };
+            char[] nums = cuit.ToCharArray();
+            int total = 0;
+
+            for (int i = 0; i < mult.Length; i++)
+            {
+                total += int.Parse(nums[i].ToString()) * mult[i];
+            }
+
+            var resto = total % 11;
+            return resto == 0 ? 0 : resto == 1 ? 9 : 11 - resto;
         }
 
         //Verifica que el CUIL ingresado sea valido en cuanto al estandar
@@ -59,8 +96,23 @@ namespace Form2
                     CustomException ex = new CustomException("El CUIT/CUIL está incompleto.");
                     throw ex;
                 }
-
-                return true;
+                else
+                {
+                    int calculado = CalcularDigito(cuit);  // Se almacena el código de verificación
+                    int digito = int.Parse(cuit.Substring(10)); // Se almacena la subcadena que comienza en la posición 10
+                    if(calculado != digito)
+                    {
+                        CustomException ex = new CustomException("El CUIT/CUIL ingresado es incorrecto.");
+                        throw ex;
+                    }
+                    else
+                    {
+                        return calculado == digito; // Si se verifica que el código de verificación es igual al dígito del CUIT, se retorna true
+                    }
+                        
+                }               
+                
+                
             }
             catch (CustomException ex)
             {
@@ -132,6 +184,7 @@ namespace Form2
 
                 }
                 ArchivarEstudiante(persona);
+
             }
             else
             {
@@ -258,7 +311,7 @@ namespace Form2
 
             }
 
-
+            Datos.InsertarDatosDB(persona);
 
         }
 
@@ -361,6 +414,9 @@ namespace Form2
             {
                 Console.WriteLine($"Error al leer el archivo: {ex.Message}");
             }
+
         }
+
+
     }
 }
